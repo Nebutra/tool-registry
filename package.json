@@ -1,0 +1,54 @@
+{
+  "name": "@nebutra/tool-registry",
+  "version": "0.1.1",
+  "description": "SKILL.md registry with progressive disclosure and content-store backing",
+  "private": false,
+  "license": "MIT",
+  "type": "module",
+  "nebutra": {
+    "featureId": "tool-registry",
+    "category": "ai",
+    "surface": "tool-registry",
+    "summary": "Procedure knowledge registry for SKILL.md files"
+  },
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "build": "tsup",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@nebutra/capability-kit": "^0.2.1",
+    "@nebutra/content-store": "^0.1.1",
+    "@nebutra/errors": "^0.1.1",
+    "yaml": "2.8.2"
+  },
+  "devDependencies": {
+    "@types/node": "^25.9.1",
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3",
+    "vitest": "^4.1.4"
+  },
+  "homepage": "https://github.com/Nebutra/tool-registry#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nebutra/tool-registry.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Nebutra/tool-registry/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "nebutraMirror": {
+    "sourceRepository": "Nebutra/Nebutra-Sailor",
+    "sourceDirectory": "packages/ai/tool-registry",
+    "sourcePackage": "@nebutra/tool-registry",
+    "sourceSha": "c07ee7a4be20e7c7eff00e262869abffdce4db51",
+    "canonicalSource": "monorepo"
+  }
+}
