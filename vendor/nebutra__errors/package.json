@@ -1,0 +1,21 @@
+{
+  "name": "@nebutra/errors",
+  "version": "0.1.2",
+  "description": "Unified error handling and API error responses",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "dependencies": {},
+  "private": false
+}

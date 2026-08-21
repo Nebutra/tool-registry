@@ -1,0 +1,28 @@
+{
+  "name": "@nebutra/capability-kit",
+  "version": "0.2.4",
+  "description": "Neutral capability primitives shared by every Nebutra capability package: CapabilityError, DoctorReport, doctor/debug CLI runner, and debug JSONL storage.",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./debug": {
+      "types": "./dist/debug.d.ts",
+      "import": "./dist/debug.js",
+      "default": "./dist/debug.js"
+    }
+  },
+  "files": [
+    "dist",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "dependencies": {},
+  "private": false
+}
