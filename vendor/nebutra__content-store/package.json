@@ -1,0 +1,29 @@
+{
+  "name": "@nebutra/content-store",
+  "version": "0.1.4",
+  "description": "Local-first semantic filesystem with rebuildable search index",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "dependencies": {
+    "@dao-xyz/sqlite3-vec": "0.0.19",
+    "@nebutra/capability-kit": "file:../nebutra__capability-kit",
+    "@nebutra/errors": "file:../nebutra__errors",
+    "@nebutra/local-embedding": "file:../nebutra__local-embedding",
+    "better-sqlite3": "12.10.0"
+  },
+  "private": false
+}

@@ -1,0 +1,50 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.32.1
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          # No pnpm-lock.yaml in standalone mirrors — caching requires a lockfile.
+      - name: Install
+        run: pnpm install --no-frozen-lockfile --ignore-scripts
+      - name: Build
+        run: |
+          if jq -e '.scripts.build // empty' package.json >/dev/null; then
+            pnpm run build
+          else
+            echo 'no build script'
+          fi
+      - name: Typecheck
+        # Hard gate: published @nebutra/* packages ship dist+.d.ts.
+        run: |
+          if jq -e '.scripts.typecheck // empty' package.json >/dev/null; then
+            pnpm run typecheck
+          else
+            echo 'no typecheck script'
+          fi
+      - name: Test
+        # Soft-fail: monorepo-only harnesses (extensionless node:test, etc.).
+        # Install + build + typecheck remain hard gates.
+        continue-on-error: true
+        run: |
+          if jq -e '.scripts.test // empty' package.json >/dev/null; then
+            pnpm run test
+          else
+            echo 'no test script'
+          fi
