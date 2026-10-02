@@ -1,0 +1,24 @@
+{
+  "name": "@nebutra/local-embedding",
+  "version": "0.1.4",
+  "description": "Deterministic zero-config local text embedding primitive shared by file and RAG indexes",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "dependencies": {},
+  "private": false
+}

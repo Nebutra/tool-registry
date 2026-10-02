@@ -1,0 +1,7 @@
+node_modules
+/dist
+!vendor/**/dist
+!vendor/**/dist/**
+coverage
+.turbo
+.DS_Store
